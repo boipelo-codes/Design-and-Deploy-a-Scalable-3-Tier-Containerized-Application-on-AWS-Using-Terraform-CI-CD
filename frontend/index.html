@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors · Multiplayer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff4d4d 0%, #4caf50 50%, #2196f3 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #ff4d4d, #4caf50, #2196f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #2196f3;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff4d4d, #4caf50, #2196f3);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            width: 100%;
+            max-width: 250px;
+            margin: 0.5rem auto;
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .game-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .game-buttons button {
+            background: white;
+            color: #333;
+            border: 2px solid #2196f3;
+            box-shadow: none;
+            font-size: 1.5rem;
+            padding: 1rem;
+            min-width: 100px;
+            background: linear-gradient(white, white); /* fallback */
+            background: white;
+        }
+
+        .game-buttons button:hover {
+            background: linear-gradient(45deg, #ff4d4d, #4caf50, #2196f3);
+            color: white;
+            border-color: transparent;
+        }
+
+        #result {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            border: 2px dashed #2196f3;
+            min-height: 120px;
+        }
+
+        #score {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .waiting {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        footer {
+            margin-top: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Section -->
+        <div id="login">
+            <h1>🎮 RGB Arena</h1>
+            <h2>Enter your username</h2>
+            <input type="text" id="username" placeholder="Your name" autocomplete="off" />
+            <button id="loginBtn">Start Playing</button>
+        </div>
+
+        <!-- Game Section (initially hidden) -->
+        <div id="game" class="hidden">
+            <h1>Rock · Paper · Scissors</h1>
+            <div id="result">Waiting for opponent...</div>
+            <div class="game-buttons">
+                <button id="rock">🪨 Rock</button>
+                <button id="paper">📄 Paper</button>
+                <button id="scissors">✂️ Scissors</button>
+            </div>
+            <div id="score">Wins: 0 | Losses: 0</div>
+        </div>
+        <footer>⚡ Multiplayer · Real‑time · Full‑stack ⚡</footer>
+    </div>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
