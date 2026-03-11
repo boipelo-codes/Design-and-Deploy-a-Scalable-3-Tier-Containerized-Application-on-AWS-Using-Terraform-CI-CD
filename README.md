@@ -229,3 +229,30 @@ Create a simple lobby system or matchmaking queue.
 
 Deploy frontend to S3 + CloudFront for better performance.
 
+## Screenshots
+
+| Instance Overview | Target Group Health | 
+|-------------------|---------------------|
+| ![EC2 Instances](/more%20screenshots/insatnces.png) | ![Target Group](/more%20screenshots/target%20groups.png) |
+
+| Auto-Scaling Groups | Internet Gateway | 
+|-------------------|---------------------|
+| ![Auto-Scaling Groups](/more%20screenshots/auto%20scaling%20groups.png) | ![Internet Gateway](/more%20screenshots/rps%20internet%20gateway.png) |
+
+| Load-Balancer | Security Groups | 
+|-------------------|---------------------|
+| ![Load-Balancer](/more%20screenshots/rps%20loadbalancer.png) | ![Security Groups](/more%20screenshots/security%20groups.png) |
+
+| VPC | Subnets | 
+|-------------------|---------------------|
+| ![VPC](/more%20screenshots/rps%20vpc.png) | ![Subnets ](/more%20screenshots/subnets.png) |
+
+| Endpoint | Broswer Snippet (of both players)| 
+|-------------------|---------------------|
+| ![ Endpoint](/more%20screenshots/enpoint.png) | ![Broswer Snippet (of both players)](/more%20screenshots/browser%20snippet.png) |
+
+
+## Architectural Diagram
+
+
+
