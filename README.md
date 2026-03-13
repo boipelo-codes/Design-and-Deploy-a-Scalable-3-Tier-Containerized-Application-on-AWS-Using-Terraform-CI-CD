@@ -254,5 +254,4 @@ Deploy frontend to S3 + CloudFront for better performance.
 
 ## Architectural Diagram
 
-
-
+![Architctural Diagram](/more%20screenshots/architecture%20diagram%20rps.png)
