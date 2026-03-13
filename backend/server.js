@@ -210,4 +210,10 @@ app.get('/', (req, res) => {
 
 server.listen(3000, () => {
   console.log('🚀 Backend server running at http://localhost:3000');
+<<<<<<< HEAD
 });
+=======
+});
+
+app.get('/', (req, res) => res.send('OK'));
+>>>>>>> e8817c852aa9fdbc79e4b80fd7a567af04e08801
