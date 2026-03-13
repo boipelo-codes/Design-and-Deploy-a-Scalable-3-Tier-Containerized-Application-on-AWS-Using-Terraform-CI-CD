@@ -4,9 +4,6 @@
 
 A real‑time multiplayer Rock Paper Scissors game transformed into a production‑ready, highly available cloud application on AWS. This project demonstrates end‑to‑end cloud engineering skills including Infrastructure as Code (Terraform), containerization (Docker), CI/CD (GitHub Actions), and monitoring (CloudWatch).
 
-![Architecture Diagram](docs/architecture-diagram.png)  
-*(Add your architecture diagram here)*
-
 ---
 
 ## 📖 Table of Contents
